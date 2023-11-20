@@ -80,6 +80,13 @@ def main(secret_num_len):
         if bulls == len(secret_number):
             print(f" You won in {attempts} attempts")
             print(f"It tooked you {finish} s")
+            if attempts < 5:
+                score = "Amazing"
+            if attempts > 5 and attempts < 10:
+                score = "Good"
+            if attempts > 10:
+                score = "not so gooood"
+            print(f"{line} \n That's {score} result")
             break
 
         if bulls <= 1 and cows <= 1:
