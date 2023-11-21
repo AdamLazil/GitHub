@@ -41,11 +41,21 @@ def guess_number(length):
     If is number not valid print why
     """
     while True:
-        user_guess = input(f"Enter a number: ")
-        if len(user_guess) != length or not user_guess.isdigit():
-            print(f" Enter a {length} digit number")
-            continue
+        try:
+            n = user_guess = input(f"Enter a number: ")
+            n = int(n)
+            if len(user_guess) != length:  # or not user_guess.isdigit():
+                print(f" Enter a {length} digit number")
+                continue
+            if len(set(user_guess)) != length:
+                print("Enter a number with different digits")
+                continue
+            if user_guess[0] == "0":
+                print("You can't begin with 0")
+                continue
 
+        except ValueError:
+            print("Input you entered is not a number")
         else:
             return user_guess
 
