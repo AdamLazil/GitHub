@@ -61,6 +61,8 @@ def guess_number(length):
 
 
 def get_bulls_cows(secret_num, user_guess):
+    """ """
+
     bulls = 0
     cows = 0
     for x in range(len(secret_num)):
