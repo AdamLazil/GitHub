@@ -21,7 +21,7 @@ def get_introduction():
     print(prompt)
 
 
-def make_secret_number(length: int = 4) -> list:
+def make_secret_number(length: int = 4) -> str:
     """
     This function is makeing random length number without duplicates
     Use parametr length for setting up how many number you wish for
@@ -35,7 +35,7 @@ def make_secret_number(length: int = 4) -> list:
     return "".join(secret_num)
 
 
-def guess_number(length):
+def guess_number(length) -> str:
     """
     Except number from user and check if the number is valid.
     If is number not valid print why
@@ -60,8 +60,11 @@ def guess_number(length):
             return user_guess
 
 
-def get_bulls_cows(secret_num, user_guess):
-    """ """
+def get_bulls_cows(secret_num, user_guess) -> int:
+    """
+    Return exact position of user guess (bulls) and
+    wrong position (cows) of user guess in secret number
+    """
 
     bulls = 0
     cows = 0
